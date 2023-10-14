@@ -1,0 +1,20 @@
+version: '2'
+services:
+  thelounge:
+    image: thelounge/thelounge:latest
+    container_name: thelounge
+    ports:
+      - "9000:9000"
+    restart: always
+    volumes:
+      - ./thelounge:/app
+
+  bitlbee:
+    image: ezkrg/bitlbee-libpurple
+    container_name: thelounge-bitlbee
+    ports:
+      - "6667:6667"
+    restart: always
+    volumes:
+      - ./bitlbee:/app
+
